@@ -4,6 +4,13 @@ module.exports = {
         if (!char) {
             return [];
         }
-        return ["A"];
+        if (char === "A") {
+            return ["A"];
+        }
+        return [
+            " A ",
+            "B B",
+            " A "
+        ];
     }
 };
