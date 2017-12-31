@@ -1,0 +1,32 @@
+{
+  "name": "diamond-2017-12-31",
+  "version": "1.0.0",
+  "description": "Diamond kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch",
+    "build": "watchify index.js -o bundle.js -v",
+    "start": "watch-http-server -s",
+    "watch": "npm-run-all test build start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmw57/kata-diamond-2017-12-31.git"
+  },
+  "keywords": [
+    "diamond",
+    "kata"
+  ],
+  "author": "Paul Wilkins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pmw57/kata-diamond-2017-12-31/issues"
+  },
+  "homepage": "https://github.com/pmw57/kata-diamond-2017-12-31#readme",
+  "devDependencies": {
+    "jest": "^22.0.4",
+    "npm-run-all": "^4.1.2",
+    "watch-http-server": "^0.7.6",
+    "watchify": "^3.9.0"
+  }
+}
