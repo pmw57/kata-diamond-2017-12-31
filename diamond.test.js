@@ -14,4 +14,7 @@ var diamond = require("./diamond.js");
     test("The B diamond is a bit more complex", function () {
         expect(diamond.create("B")).toEqual([" A ", "B B", " A "]);
     });
+    test("The C diamond", function () {
+        expect(diamond.create("C")).toEqual(["  A  ", " B B ", "C   C", " B B ", "  A  "]);
+    });
 }());

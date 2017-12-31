@@ -1,16 +1,29 @@
 "use strict";
 module.exports = {
     create: function (char) {
+        var diamond = [];
         if (!char) {
-            return [];
+            return diamond;
         }
         if (char === "A") {
-            return ["A"];
+            diamond.push(char);
+            return diamond;
         }
-        return [
-            " A ",
-            "B B",
-            " A "
+        if (char === "B") {
+            diamond = [
+                " A ",
+                char + " " + char,
+                " A "
+            ];
+            return diamond;
+        }
+        diamond = [
+            "  A  ",
+            " B B ",
+            char + "   " + char,
+            " B B ",
+            "  A  "
         ];
+        return diamond;
     }
 };
