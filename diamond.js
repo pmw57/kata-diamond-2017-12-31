@@ -17,27 +17,17 @@ module.exports = (function iife() {
     }
     function create(char) {
         var diamond = [];
+        var spaces = "";
         if (!char) {
             return diamond;
         }
-        if (char === "A") {
-            diamond.push(char);
-            return diamond;
-        }
-        if (char === "B") {
-            diamond.push(charLine(char));
-            char = prevChar(char);
-            diamond.unshift(" " + charLine(char) + " ");
-            diamond.push(" " + charLine(char) + " ");
-            return diamond;
-        }
         diamond.push(charLine(char));
-        char = prevChar(char);
-        diamond.unshift(" " + charLine(char) + " ");
-        diamond.push(" " + charLine(char) + " ");
-        char = prevChar(char);
-        diamond.unshift("  " + charLine(char) + "  ");
-        diamond.push("  " + charLine(char) + "  ");
+        while (char !== "A") {
+            char = prevChar(char);
+            spaces += " ";
+            diamond.unshift(spaces + charLine(char) + spaces);
+            diamond.push(spaces + charLine(char) + spaces);
+        }
         return diamond;
     }
     return {
